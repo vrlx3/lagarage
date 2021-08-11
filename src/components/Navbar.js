@@ -18,7 +18,7 @@ function Navbar(props) {
 
   function menuClick(event) {
     event.preventDefault;
-    console.log("menu icon clicked");
+
     setShowMenu(!showMenu);
   }
   function sendLogin(event) {
@@ -35,8 +35,6 @@ function Navbar(props) {
   function MenuOpen() {
     return (
       <div id="menuOpen">
-        {console.log(Boolean(user.id))}
-
         {Boolean(user.id) == true ? (
           <></>
         ) : (

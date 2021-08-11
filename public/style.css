@@ -40,7 +40,8 @@ nav {
   margin: 1vh 0;
 }
 
-#menuOpen {
+#menuOpen,
+#bookService {
   display: flex;
   flex-direction: column;
 }
@@ -54,6 +55,15 @@ nav {
   background-color: blanchedalmond;
 }
 
+#bookService > div {
+  border: 1px solid gray;
+  padding: 3px;
+  border-radius: 10px;
+  margin-top: 1vh;
+  text-align: center;
+  background-color: rgb(250, 219, 171);
+}
+
 #footer {
   position: fixed;
   left: 0;
@@ -63,17 +73,6 @@ nav {
   color: red;
   text-align: center;
   padding: 1px;
-}
-
-#bookService {
-  display: flex;
-  flex-direction: column;
-  margin-left: 1vw;
-  margin-right: 1vw;
-}
-
-#bookService > button {
-  margin-top: 1vh;
 }
 
 #showMenu {
