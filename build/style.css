@@ -5,19 +5,19 @@
 body {
   background-color: rgb(232, 216, 154);
 }
-nav a {
+/* nav a {
   margin-left: 10px;
 }
 nav {
   border-bottom: 1px solid gray;
   padding: 5px;
-}
-.landing,
+} */
+/* .landing,
 .Home {
   font-size: 24px;
   font-weight: bold;
   margin: 10px 40px;
-}
+} */
 
 .AuthForm {
   display: flex;
@@ -26,11 +26,18 @@ nav {
   align-items: flex-start;
   flex-wrap: wrap;
   font-size: 24px;
+  margin: 1vh 1vw;
 }
 
-.AuthForm input {
-  width: 250px;
-  margin: 5px 10px;
+.AuthForm > div > input {
+  min-width: 50px;
+  max-width: 90vw;
+  width: 90vw;
+}
+
+.AuthForm > button {
+  width: 90vw;
+  margin: 1vh 0;
 }
 
 #menuOpen {
@@ -41,6 +48,10 @@ nav {
 #menuOpen > div {
   border: 1px solid gray;
   padding: 3px;
+  border-radius: 10px;
+  margin-top: 1vh;
+  text-align: center;
+  background-color: blanchedalmond;
 }
 
 #footer {
@@ -66,8 +77,9 @@ nav {
 }
 
 #showMenu {
-  position: relative;
-  right: 1vw;
+  /* position: relative;
+  left: 75vw; */
+  margin-left: 1vw;
 }
 
 #body1,
@@ -84,8 +96,4 @@ nav {
 
 .App > div > svg {
   margin-left: 1vw;
-}
-
-#showMenu {
-  margin-left: 93vw;
 }
