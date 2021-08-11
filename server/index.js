@@ -15,7 +15,7 @@ server.use(express.json());
 server.use(morgan("tiny"));
 
 // express static for build files
-server.use("/", express.static(path.join(__dirname, "build")));
+server.use("/", express.static(path.join(__dirname, "../build")));
 
 server.use("/api", apiRouter);
 
@@ -30,7 +30,7 @@ server.use((err, req, res, next) => {
 
 // For any get routes that are not in /api, rely on ReactRouter to handle
 server.get("*", (req, res) => {
-  res.sendFile(path.join(__dirname, "build", "index.js"));
+  res.sendFile(path.join(__dirname, "../build", "index.js"));
 });
 
 // 404 Handler
