@@ -41,7 +41,8 @@ function Navbar(props) {
           <div onClick={sendLogin}>Login</div>
         )}
 
-        <div onClick={sendRegister}>Register</div>
+        {Boolean(user.id) ? <> </> : <div onClick={sendRegister}>Register</div>}
+
         <div>Menu Option3</div>
 
         {Boolean(user.id) == true ? (
@@ -55,7 +56,7 @@ function Navbar(props) {
 
   function sendHome(event) {
     event.preventDefault();
-    props.history.push("/"); // send it home
+    Boolean(user.id) ? props.history.push("/home") : props.history.push("/"); // send it home
     setShowMenu(false);
   }
 
