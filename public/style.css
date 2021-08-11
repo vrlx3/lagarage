@@ -1,0 +1,99 @@
+/*
+    Basic Styling to get started (feel free to erase and add as needed)
+*/
+
+body {
+  background-color: rgb(232, 216, 154);
+}
+/* nav a {
+  margin-left: 10px;
+}
+nav {
+  border-bottom: 1px solid gray;
+  padding: 5px;
+} */
+/* .landing,
+.Home {
+  font-size: 24px;
+  font-weight: bold;
+  margin: 10px 40px;
+} */
+
+.AuthForm {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  font-size: 24px;
+  margin: 1vh 1vw;
+}
+
+.AuthForm > div > input {
+  min-width: 50px;
+  max-width: 90vw;
+  width: 90vw;
+}
+
+.AuthForm > button {
+  width: 90vw;
+  margin: 1vh 0;
+}
+
+#menuOpen {
+  display: flex;
+  flex-direction: column;
+}
+
+#menuOpen > div {
+  border: 1px solid gray;
+  padding: 3px;
+  border-radius: 10px;
+  margin-top: 1vh;
+  text-align: center;
+  background-color: blanchedalmond;
+}
+
+#footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: black;
+  color: red;
+  text-align: center;
+  padding: 1px;
+}
+
+#bookService {
+  display: flex;
+  flex-direction: column;
+  margin-left: 1vw;
+  margin-right: 1vw;
+}
+
+#bookService > button {
+  margin-top: 1vh;
+}
+
+#showMenu {
+  /* position: relative;
+  left: 75vw; */
+  margin-left: 1vw;
+}
+
+#body1,
+#body2,
+#body3 {
+  margin-left: 1vw;
+  margin-right: 1vw;
+  text-align: justify;
+}
+
+.App > div > h1 {
+  margin-left: 1vw;
+}
+
+.App > div > svg {
+  margin-left: 1vw;
+}
