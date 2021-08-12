@@ -45,7 +45,7 @@ function AuthForm(props) {
         <input
           id="password"
           value={password}
-          type="text"
+          type="password"
           placeholder="Password"
           onChange={(evt) => setPassword(evt.target.value)}
         />

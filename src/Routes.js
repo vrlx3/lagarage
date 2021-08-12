@@ -5,7 +5,7 @@ import AuthForm from "./components/AuthForm";
 import Landing from "./components/Landing";
 
 function Routes(props) {
-  const { user, setUser } = props;
+  const { user, setUser, history } = props;
   return (
     <Switch>
       <Route
@@ -22,7 +22,10 @@ function Routes(props) {
       />
       <Route path="/home" component={Home} />
 
-      <Route path="/" component={Landing} />
+      <Route
+        path="/"
+        render={(props) => <Landing {...props} user={user} history={history} />}
+      />
     </Switch>
   );
 }

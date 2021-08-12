@@ -56,6 +56,7 @@ function Navbar(props) {
 
   function sendHome(event) {
     event.preventDefault();
+    console.log(props);
     Boolean(user.id) ? props.history.push("/home") : props.history.push("/"); // send it home
     setShowMenu(false);
   }
