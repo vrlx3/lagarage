@@ -22,7 +22,7 @@ function Home(props) {
   return (
     <div className="Home">
       <h1>Welcome home, {user.username}</h1>
-      <CheckStatus user={user} />
+      <CheckStatus user={user} setUser={setUser} />
     </div>
   );
 }

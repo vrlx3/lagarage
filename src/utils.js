@@ -1,15 +1,15 @@
-import axios from 'axios'
+import axios from "axios";
 
 function setHeaders() {
-  let token = localStorage.getItem('token')
+  let token = localStorage.getItem("token");
   let config = token
     ? {
         headers: {
           Authorization: `Bearer ${token}`,
         },
       }
-    : {}
-  return config
+    : {};
+  return config;
 }
 
 /**
@@ -26,12 +26,12 @@ function setHeaders() {
  */
 export async function checkLogin() {
   try {
-    let { data } = await axios.get('/api/users/me', setHeaders())
+    let { data } = await axios.get("/api/users/me", setHeaders());
     // if data has an id and user the user is logged on
-    return data
+    return data;
   } catch (err) {
-    console.log('checkLogin(): User is not logged on.\n', err)
-    return err
+    console.log("checkLogin(): User is not logged on.\n", err);
+    return err;
   }
 }
 
@@ -51,18 +51,18 @@ export async function checkLogin() {
  */
 export async function login(username, password) {
   try {
-    const { data } = await axios.post('/api/users/login', {
+    const { data } = await axios.post("/api/users/login", {
       username,
       password,
-    })
+    });
     if (data.token) {
-      setToken(data.token)
+      setToken(data.token);
     }
-    return data
+    return data;
   } catch (err) {
-    console.error('login(): Unable to login.\n', err)
+    console.error("login(): Unable to login.\n", err);
     // returns error to be handled.
-    return err
+    return err;
   }
 }
 
@@ -82,21 +82,30 @@ export async function login(username, password) {
  */
 export async function register(username, password) {
   try {
-    const { data } = await axios.post('/api/users/register', {
+    const { data } = await axios.post("/api/users/register", {
       username,
       password,
-    })
+    });
     if (data.token) {
-      setToken(data.token)
+      setToken(data.token);
     }
-    return data
+    return data;
   } catch (err) {
-    console.error('register(): Unable to register user.\n', err)
+    console.error("register(): Unable to register user", err);
     // returns error to be handled
-    return err
+    return err;
   }
 }
 
 function setToken(token) {
-  localStorage.setItem('token', token)
+  localStorage.setItem("token", token);
+}
+
+export function handleAdd(lic) {
+  try {
+    const { data } = axios.post("/api/vehicles/add", { lic });
+    return data;
+  } catch (error) {
+    console.error("handleADD(): Unable to add Vehicle");
+  }
 }

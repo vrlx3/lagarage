@@ -1,12 +1,9 @@
-// require in the database adapter functions as you write them (createUser, createActivity...)
 const { createUser } = require("./");
 const client = require("./client");
 
 async function dropTables() {
   console.log("Dropping All Tables...");
-  // drop all tables, in the correct order
 
-  //  Add more tables as you need them
   try {
     await client.query(`
     DROP TABLE IF EXISTS vehicle_history;
@@ -23,9 +20,7 @@ async function dropTables() {
 async function createTables() {
   try {
     console.log("Starting to build tables...");
-    // create all tables, in the correct order
 
-    // User's Table
     await client.query(`
       CREATE TABLE users(
         id  SERIAL PRIMARY KEY, 
@@ -52,19 +47,12 @@ async function createTables() {
 
     `);
 
-    // Add tables as you need them (A good place to start is Products and Orders
-    // You may also need an extra table that links products and orders together (HINT* Many-To-Many)
-
     console.log("Finished building tables!");
   } catch (error) {
     console.error("Error building tables!");
     throw error;
   }
 }
-
-/* 
-ADD DATA BELOW AS NEEDED. This is default seed data, and will help you start testing
-*/
 
 async function createInitialUsers() {
   console.log("Starting to create users...");
@@ -91,8 +79,6 @@ async function rebuildDB() {
     await dropTables();
     await createTables();
     await createInitialUsers();
-
-    // create other data
   } catch (error) {
     console.log("Error during rebuildDB");
     throw error;
